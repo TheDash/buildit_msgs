@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(buildit_msgs)
-find_package(catkin REQUIRED message_generation message_runtime visualization_msgs geometry_msgs std_msgs )
+find_package(catkin REQUIRED COMPONENTS message_generation visualization_msgs geometry_msgs std_msgs )
 
 add_message_files(
    FILES
@@ -22,7 +22,7 @@ generate_messages(
  )
 
 catkin_package(
-
+  CATKIN_DEPENDS message_runtime
 )
 
 install(DIRECTORY msg/ srv/ DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
